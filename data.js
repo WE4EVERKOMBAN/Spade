@@ -8,7 +8,7 @@ bot_token:'5597665556:AAESRcpLOC318TCP4E7rYg2j0iQVdahoCgo',// Bot Token
 
 bot_name:'Anthda_Bot',// Bot Username Without @
 
-bot_admin:1234567890,// Admin Telegram Id
+bot_admin:1956950975,// Admin Telegram Id
 
 channelsList : ['@AirdopAssasin'],// Channels List
 
