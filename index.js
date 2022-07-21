@@ -6,11 +6,11 @@ const { BaseScene, Stage } = Scenes
 const mongo = require('mongodb').MongoClient;
 const {enter, leave} = Stage
 const stage = new Stage();
-const Coinbase = require('coinbase');
+const Trustwallet = require('Trustwallet');
 var bodyParser = require('body-parser');
 const Scene = BaseScene
 const data = require('./data');
-const Client = require('coinbase').Client;
+const Client = require('Trustwallet').Client;
 const { lutimes } = require('fs');
 const { response } = require('express');
 let db 
@@ -45,8 +45,7 @@ const onWithdraw = new Scene('onWithdraw')
 stage.register(onWithdraw)
 
 const channels = data.channelsList
-const ky1 = data.apikey
-const ky2 = data.secretkey
+const Trust Wallet = data.Phasekey
 const admin = data.bot_admin
 const bot_cur = data.currency
 const min_wd = data.min_wd
@@ -455,16 +454,16 @@ if(ctx.message.chat.type != 'private'){
   let dbData = await db.collection('allUsers').find({userId: ctx.from.id}).toArray()
 
     if ('coinmail' in dbData[0]) {
-    ctx.replyWithMarkdown('💡 *Your Coinbase Email is:* `'+ dbData[0].coinmail +'`',
+    ctx.replyWithMarkdown('💡 *Your Wallet Adress is:* `'+ dbData[0].WalletAdress +'`',
    Markup.inlineKeyboard([
-      [Markup.button.callback('💼 Set or Change '+data.currency+'/CoinBase Email', 'setemail')]
+      [Markup.button.callback('💼 Set or Change '+data.currency+'/Wallet Adress', 'setWallet')]
       ])
       )  
        .catch((err) => sendError(err, ctx))
     }else{
-ctx.replyWithMarkdown('💡 *Your Coinbase Email is:* _not set_', 
+ctx.replyWithMarkdown('💡 *Your Wallet Adress is:* _not set_', 
     Markup.inlineKeyboard([
-      [Markup.button.callback('💼 Set or Change '+data.currency+'/CoinBase Email', 'setemail')]
+      [Markup.button.callback('💼 Set or Change '+data.currency+'/Waller Adress', 'setemail')]
       ])
       ) 
            .catch((err) => sendError(err, ctx))
